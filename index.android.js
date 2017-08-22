@@ -1,5 +1,5 @@
 
 import { AppRegistry } from 'react-native';
-import setup from './js/setup';
+import setup from './app/setup';
 
 AppRegistry.registerComponent('NativeStarterKit', setup);
