@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity, TextInput, View } from "react-native";
+import { TouchableOpacity, TextInput, View, Image } from "react-native";
 import { connect } from "react-redux";
 import Drawer from "../drawer/Drawer";
 import { DrawerNavigator, NavigationActions } from "react-navigation";
@@ -13,7 +13,8 @@ import {
   Icon,
   Left,
   Body,
-  Right
+  Right,
+  Col
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
@@ -22,6 +23,10 @@ import styles from "./styles";
 
 class Home extends Component {
   
+  state = {
+    busCode : null
+  }
+
   static navigationOptions = {
     header: null
   };
@@ -36,48 +41,29 @@ class Home extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
-          <Left>
-
-            <Button
-              transparent
-              onPress={() => {
-                DrawerNav.dispatch(
-                  NavigationActions.reset({
-                    index: 0,
-                    actions: [NavigationActions.navigate({ routeName: "Home" })]
-                  })
-                );
-                DrawerNav.goBack();
-              }}
-            >
-              <Icon active name="power" />
-            </Button>
-          </Left>
-
-          <Body>
-            <Title>Home</Title>
-          </Body>
-
-          <Right>
-            <Button
-              transparent
-              onPress={() => DrawerNav.navigate("DrawerOpen")}
-            >
-              <Icon active name="menu" />
-            </Button>
-          </Right>
-        </Header>
         <Content>
           <Grid style={styles.mt}>
-            <TextInput
-              style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-              onChangeText={(text) => this.state.text = text}
-            />
-            <Button onPress={this._onButtonClicked}><Text>Check</Text></Button>
-            <View>
-              <Text>Passes ? : {this.props.iett.busPasses ? "yes" : "no"}</Text>
-            </View>
+            <Row style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+              <Image source={require("../../../images/iett_logo.png")} style={{width: 250, height: 307, alignItems : "center"}}/>
+            </Row>
+            <Row>
+              <TextInput
+                style={{flex:1, height: 40, marginBottom: 20, borderColor: '#f5f5f5', borderWidth: 1}}
+                onChangeText={(text) => this.state.busCode = text}
+              />
+            </Row>
+            <Row>
+              <Col>
+                <Row>
+                  <Button onPress={this._onButtonClicked} style={{flex: 1}}><Text>Check</Text></Button>
+                </Row>
+                <Row>
+                  <View>
+                    <Text>Passes ? : {this.props.iett.busPasses ? "yes" : "no"}</Text>
+                  </View>
+                </Row>
+              </Col>
+            </Row>
           </Grid>
         </Content>
       </Container>
@@ -85,36 +71,21 @@ class Home extends Component {
   }
 
   _onButtonClicked = () => {
-    this.props.checkIfBusPasses();
+    if (this.state.busCode == null || this.state.busCode == "") {
+      alert("Please enter a bus name");
+      return;
+    }
+    this.props.checkIfBusPasses(this.state.busCode);
   }
 }
 
 function bindAction(dispatch) {
   return {
-    checkIfBusPasses : () => dispatch(checkIfBusPasses())
+    checkIfBusPasses : (busCode) => dispatch(checkIfBusPasses(busCode))
   };
 }
 const mapStateToProps = state => ({
   iett : state.iett
 });
 
-const HomeSwagger = connect(mapStateToProps, bindAction)(Home);
-
-const DrawNav = DrawerNavigator(
-  {
-    Home: { screen: HomeSwagger }
-  },
-  {
-    contentComponent: props => <Drawer {...props} />
-  }
-);
-const DrawerNav = null;
-
-DrawNav.navigationOptions = ({ navigation }) => {
-  DrawerNav = navigation;
-  return {
-    header: null
-  };
-};
-
-export default DrawNav;
+export default connect(mapStateToProps, bindAction)(Home);

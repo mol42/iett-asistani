@@ -11,12 +11,13 @@ function setup():React.Component {
 
   class Root extends Component {
 
+    state = {
+      store : null
+    }
+
     constructor() {
       super();
-      this.state = {
-        isLoading: false,
-        store: configureStore(() => this.setState({ isLoading: false })),
-      };
+      this.state.store = configureStore();
     }
 
     render() {
