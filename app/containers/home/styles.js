@@ -4,7 +4,9 @@ const React = require('react-native');
 const { StyleSheet } = React;
 export default {
   container: {
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FAFAFA',
+    paddingLeft: 10,
+    paddingRight: 10
   },
   row: {
     flex: 1,

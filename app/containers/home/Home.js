@@ -48,19 +48,21 @@ class Home extends Component {
             </Row>
             <Row>
               <TextInput
-                style={{flex:1, height: 40, marginBottom: 20, borderColor: '#f5f5f5', borderWidth: 1}}
+              placeholder={"Enter bus code"}
+                style={{flex:1, padding: 5, height: 40, marginBottom: 20, borderColor: '#ccc', borderWidth: 1}}
                 onChangeText={(text) => this.state.busCode = text}
               />
             </Row>
             <Row>
               <Col>
                 <Row>
-                  <Button onPress={this._onButtonClicked} style={{flex: 1}}><Text>Check</Text></Button>
+                  <Button onPress={this._onButtonClicked} style={{flex: 1}}><Text>BAHÇELER - KADIKÖY</Text></Button>
                 </Row>
                 <Row>
-                  <View>
-                    <Text>Passes ? : {this.props.iett.busPasses ? "yes" : "no"}</Text>
-                  </View>
+                  <Button onPress={this._onButtonClicked} style={{flex: 1, marginTop: 5, marginBottom: 5}}><Text>GEÇER Mİ ?</Text></Button>
+                </Row>
+                <Row style={{justifyContent: 'center', alignItems: 'center'}}>
+                  <Text>{this.props.iett.busPasses ? "GEÇER" : "GEÇMEZ"}</Text>
                 </Row>
               </Col>
             </Row>

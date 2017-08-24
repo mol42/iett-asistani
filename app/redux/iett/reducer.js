@@ -3,7 +3,8 @@ import {
 } from "./actions";
 
 const initialState = {
-    busPasses : false
+    busPasses : false,
+    selectedStation : null
 };
 
 export const iettReducer = (state = initialState, action) => {
