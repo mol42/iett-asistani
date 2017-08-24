@@ -21,9 +21,11 @@ import { checkIfBusPasses } from "../../redux/iett/actions"
 import styles from "./styles";
 
 class Home extends Component {
+  
   static navigationOptions = {
     header: null
   };
+
   static propTypes = {
     name: React.PropTypes.string,
     setIndex: React.PropTypes.func,
@@ -31,13 +33,7 @@ class Home extends Component {
     openDrawer: React.PropTypes.func
   };
 
-  newPage(index) {
-    this.props.setIndex(index);
-    Actions.blankPage();
-  }
-
   render() {
-    console.log(DrawNav, "786785786");
     return (
       <Container style={styles.container}>
         <Header>
@@ -78,7 +74,7 @@ class Home extends Component {
               style={{height: 40, borderColor: 'gray', borderWidth: 1}}
               onChangeText={(text) => this.state.text = text}
             />
-            <Button onPress={this._onButtonClicked}></Button>
+            <Button onPress={this._onButtonClicked}><Text>Check</Text></Button>
             <View>
               <Text>Passes ? : {this.props.iett.busPasses ? "yes" : "no"}</Text>
             </View>
