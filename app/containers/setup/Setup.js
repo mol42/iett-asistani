@@ -48,7 +48,7 @@ class Home extends Component {
             </Row>
             <Row>
               <TextInput
-                placeholder={"Enter bus code"}
+              placeholder={"Enter bus code"}
                 style={{flex:1, padding: 5, height: 40, marginBottom: 20, borderColor: '#ccc', borderWidth: 1}}
                 onChangeText={(text) => this.state.busCode = text}
               />
@@ -56,13 +56,7 @@ class Home extends Component {
             <Row>
               <Col>
                 <Row>
-                  <Col size={8}>
-                    <Text style={{flex: 1, fontSize : 16, fontWeight : "bold"}}>BAHÇELER</Text>
-                    <Text style={{flex: 1, fontSize : 16, color : "gray"}}>KADIKÖY</Text>
-                  </Col>
-                  <Col size={2} style={{flexDirection : "row", justifyContent: "flex-end"}}>
-                    <Button onPress={this._onButtonClicked}><Text>X</Text></Button>
-                  </Col>
+                  <Button onPress={this._onButtonClicked} style={{flex: 1}}><Text>BAHÇELER - KADIKÖY</Text></Button>
                 </Row>
                 <Row>
                   <Button onPress={this._onButtonClicked} style={{flex: 1, marginTop: 5, marginBottom: 5}}><Text>GEÇER Mİ ?</Text></Button>
