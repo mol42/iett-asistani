@@ -38,9 +38,12 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>RobotoCondensed-Bold.ttf</string>
+		<string>RobotoCondensed-Light.ttf</string>
+		<string>RobotoCondensed-Regular.ttf</string>
 		<string>Oswald-Regular.ttf</string>
 		<string>Oswald-DemiBold.ttf</string>
 		<string>Andale Mono.ttf</string>

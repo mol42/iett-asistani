@@ -21,6 +21,8 @@ import { Grid, Row } from "react-native-easy-grid";
 import { checkIfBusPasses } from "../../redux/iett/actions"
 import styles from "./styles";
 
+const ROBOTO_REGULAR = "RobotoCondensed-Regular";
+
 class Home extends Component {
   
   state = {
@@ -49,7 +51,7 @@ class Home extends Component {
             <Row>
               <TextInput
                 placeholder={"Enter bus code"}
-                style={{flex:1, padding: 5, height: 40, marginBottom: 20, borderColor: '#ccc', borderWidth: 1, fontFamily : "Oswald-Regular"}}
+                style={{flex:1, padding: 5, height: 40, marginBottom: 20, borderColor: '#ccc', borderWidth: 1, fontFamily : ROBOTO_REGULAR}}
                 onChangeText={(text) => this.state.busCode = text}
               />
             </Row>
@@ -57,15 +59,15 @@ class Home extends Component {
               <Col>
                 <Row>
                   <Col size={8}>
-                    <Text style={{flex: 1, fontSize : 20, fontWeight : "bold", fontFamily : "Oswald-Regular"}}>BAHÇELER</Text>
-                    <Text style={{flex: 1, fontSize : 20, color : "gray", fontFamily : "Oswald-Regular"}}>KADIKÖY</Text>
+                    <Text style={{flex: 1, fontSize : 20, fontWeight : "bold", fontFamily : ROBOTO_REGULAR}}>BAHÇELER</Text>
+                    <Text style={{flex: 1, fontSize : 20, color : "gray", fontFamily : ROBOTO_REGULAR}}>KADIKÖY</Text>
                   </Col>
                   <Col size={2} style={{flexDirection : "row", justifyContent: "flex-end"}}>
                     <Button onPress={this._onButtonClicked}><Text>X</Text></Button>
                   </Col>
                 </Row>
                 <Row>
-                  <Button onPress={this._onButtonClicked} style={{flex: 1, marginTop: 5, marginBottom: 5}}><Text style={{fontFamily : "Oswald-Regular"}}>GEÇER Mİ ?</Text></Button>
+                  <Button onPress={this._onButtonClicked} style={{flex: 1, marginTop: 5, marginBottom: 5}}><Text style={{fontFamily : ROBOTO_REGULAR}}>GEÇER Mİ ?</Text></Button>
                 </Row>
                 <Row style={{justifyContent: 'center', alignItems: 'center'}}>
                   <Text style={{fontFamily : "Oswald-Regular"}}>{this.props.iett.busPasses ? "GEÇER" : "GEÇMEZ"}</Text>
