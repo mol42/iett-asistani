@@ -49,7 +49,7 @@ class Home extends Component {
             <Row>
               <TextInput
                 placeholder={"Enter bus code"}
-                style={{flex:1, padding: 5, height: 40, marginBottom: 20, borderColor: '#ccc', borderWidth: 1}}
+                style={{flex:1, padding: 5, height: 40, marginBottom: 20, borderColor: '#ccc', borderWidth: 1, fontFamily : "Oswald-Regular"}}
                 onChangeText={(text) => this.state.busCode = text}
               />
             </Row>
@@ -57,18 +57,18 @@ class Home extends Component {
               <Col>
                 <Row>
                   <Col size={8}>
-                    <Text style={{flex: 1, fontSize : 16, fontWeight : "bold"}}>BAHÇELER</Text>
-                    <Text style={{flex: 1, fontSize : 16, color : "gray"}}>KADIKÖY</Text>
+                    <Text style={{flex: 1, fontSize : 20, fontWeight : "bold", fontFamily : "Oswald-Regular"}}>BAHÇELER</Text>
+                    <Text style={{flex: 1, fontSize : 20, color : "gray", fontFamily : "Oswald-Regular"}}>KADIKÖY</Text>
                   </Col>
                   <Col size={2} style={{flexDirection : "row", justifyContent: "flex-end"}}>
                     <Button onPress={this._onButtonClicked}><Text>X</Text></Button>
                   </Col>
                 </Row>
                 <Row>
-                  <Button onPress={this._onButtonClicked} style={{flex: 1, marginTop: 5, marginBottom: 5}}><Text>GEÇER Mİ ?</Text></Button>
+                  <Button onPress={this._onButtonClicked} style={{flex: 1, marginTop: 5, marginBottom: 5}}><Text style={{fontFamily : "Oswald-Regular"}}>GEÇER Mİ ?</Text></Button>
                 </Row>
                 <Row style={{justifyContent: 'center', alignItems: 'center'}}>
-                  <Text>{this.props.iett.busPasses ? "GEÇER" : "GEÇMEZ"}</Text>
+                  <Text style={{fontFamily : "Oswald-Regular"}}>{this.props.iett.busPasses ? "GEÇER" : "GEÇMEZ"}</Text>
                 </Row>
               </Col>
             </Row>
