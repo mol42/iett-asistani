@@ -10,20 +10,22 @@ import {
   Content,
   Text,
   Button,
-  Icon,
   Left,
   Body,
   Right,
   Col
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
-
+import { Icon } from "react-native-elements";
 import { checkIfBusPasses } from "../../redux/iett/actions"
 import styles from "./styles";
+import BaseContainer from "../BaseContainer";
+import { SCREEN_MAP } from "../../Routers/screens";
 
 const ROBOTO_REGULAR = "RobotoCondensed-Regular";
+const ROBOTO_BOLD = "RobotoCondensed-Bold";
 
-class Home extends Component {
+class Home extends BaseContainer {
   
   state = {
     busCode : null
@@ -39,6 +41,10 @@ class Home extends Component {
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func
   };
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -59,11 +65,11 @@ class Home extends Component {
               <Col>
                 <Row>
                   <Col size={8}>
-                    <Text style={{flex: 1, fontSize : 20, fontWeight : "bold", fontFamily : ROBOTO_REGULAR}}>BAHÇELER</Text>
+                    <Text style={{flex: 1, fontSize : 20, fontFamily : ROBOTO_REGULAR}}>BAHÇELER</Text>
                     <Text style={{flex: 1, fontSize : 20, color : "gray", fontFamily : ROBOTO_REGULAR}}>KADIKÖY</Text>
                   </Col>
                   <Col size={2} style={{flexDirection : "row", justifyContent: "flex-end"}}>
-                    <Button onPress={this._onButtonClicked}><Text>X</Text></Button>
+                    <Button onPress={this._setupSavedStations}><Icon name='cog' type='font-awesome' color={"white"}>X</Icon></Button>
                   </Col>
                 </Row>
                 <Row>
@@ -86,6 +92,10 @@ class Home extends Component {
       return;
     }
     this.props.checkIfBusPasses(this.state.busCode);
+  }
+
+  _setupSavedStations = () => {
+    this.navigate(SCREEN_MAP.SetupStations);
   }
 }
 
