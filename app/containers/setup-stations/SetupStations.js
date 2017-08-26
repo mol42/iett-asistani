@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { TouchableOpacity, TextInput, View, Image } from "react-native";
 import { connect } from "react-redux";
 import Drawer from "../drawer/Drawer";
-import { DrawerNavigator, NavigationActions } from "react-navigation";
 import {
   Container,
   Header,

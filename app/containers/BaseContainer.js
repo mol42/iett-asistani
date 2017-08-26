@@ -7,6 +7,6 @@ export default class BaseContainer extends Component {
     }
 
     navigate(screenInfo) {
-        this.props.navigation.navigate(screenInfo.name);
+       //  this.props.navigation.navigate(screenInfo.name);
     }
 }

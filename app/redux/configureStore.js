@@ -6,15 +6,14 @@ import thunk from 'redux-thunk';
 import reducer from './reducers';
 import promise from './promise';
 
-export default function configureStore(onCompletion:()=>void):any {
+function configureStore() : any {
+  
   const enhancer = compose(
-    applyMiddleware(thunk, promise),
-    devTools({
-      name: 'nativestarterkit', realtime: true,
-    }),
+    applyMiddleware(thunk, promise)
   );
 
   const store = createStore(reducer, enhancer);
-  // persistStore(store, { storage: AsyncStorage }, onCompletion);
   return store;
 }
+
+export const store = configureStore();

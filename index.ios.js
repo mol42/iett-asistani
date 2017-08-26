@@ -1,5 +1,5 @@
 
 import { AppRegistry } from 'react-native';
-import setup from './app/setup';
+import { startApp } from './app/startApp';
 
-AppRegistry.registerComponent('IETTAsistani', setup);
+startApp();

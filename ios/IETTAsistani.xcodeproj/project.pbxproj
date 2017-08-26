@@ -35,6 +35,7 @@
 		10ACC0FE1F4F95AF00DA50B8 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10ACC0EF1F4F95AF00DA50B8 /* Oswald-Regular.ttf */; };
 		10ACC0FF1F4F95AF00DA50B8 /* Oswald-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10ACC0F01F4F95AF00DA50B8 /* Oswald-RegularItalic.ttf */; };
 		10ACC1001F4F95AF00DA50B8 /* Oswald-Stencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10ACC0F11F4F95AF00DA50B8 /* Oswald-Stencil.ttf */; };
+		10CAA33B1F50F05C003F42C5 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CAA3391F50F04F003F42C5 /* libReactNativeNavigation.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -155,6 +156,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 139D7E881E25C6D100323FB7;
 			remoteInfo = "double-conversion";
+		};
+		10CAA3381F50F04F003F42C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10CAA3181F50F04E003F42C5 /* ReactNativeNavigation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8AFADBD1BEE6F3F00A4592D;
+			remoteInfo = ReactNativeNavigation;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -331,6 +339,7 @@
 		10ACC0EF1F4F95AF00DA50B8 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Regular.ttf"; path = "fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		10ACC0F01F4F95AF00DA50B8 /* Oswald-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-RegularItalic.ttf"; path = "fonts/Oswald-RegularItalic.ttf"; sourceTree = "<group>"; };
 		10ACC0F11F4F95AF00DA50B8 /* Oswald-Stencil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Stencil.ttf"; path = "fonts/Oswald-Stencil.ttf"; sourceTree = "<group>"; };
+		10CAA3181F50F04E003F42C5 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		11BC21C52150468288D9AE67 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -398,6 +407,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10CAA33B1F50F05C003F42C5 /* libReactNativeNavigation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -504,6 +514,14 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		10CAA3191F50F04E003F42C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10CAA3391F50F04F003F42C5 /* libReactNativeNavigation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +592,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				10CAA3181F50F04E003F42C5 /* ReactNativeNavigation.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -780,6 +799,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 10CAA3191F50F04E003F42C5 /* Products */;
+					ProjectRef = 10CAA3181F50F04E003F42C5 /* ReactNativeNavigation.xcodeproj */;
+				},
+				{
 					ProductGroup = 101DCE951F50BCFF00372849 /* Products */;
 					ProjectRef = 4F87EDB48C5A49B7AB95F179 /* RNVectorIcons.xcodeproj */;
 				},
@@ -853,6 +876,13 @@
 			fileType = archive.ar;
 			path = "libdouble-conversion.a";
 			remoteRef = 10ACC0E01F4F957A00DA50B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10CAA3391F50F04F003F42C5 /* libReactNativeNavigation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeNavigation.a;
+			remoteRef = 10CAA3381F50F04F003F42C5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -1115,6 +1145,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 				);
 				INFOPLIST_FILE = IETTAsistani/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1143,6 +1174,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 				);
 				INFOPLIST_FILE = IETTAsistani/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

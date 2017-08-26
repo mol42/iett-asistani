@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { TouchableOpacity, TextInput, View, Image } from "react-native";
 import { connect } from "react-redux";
 import Drawer from "../drawer/Drawer";
-import { DrawerNavigator, NavigationActions } from "react-navigation";
 import {
   Container,
   Header,
@@ -20,7 +19,7 @@ import { Icon } from "react-native-elements";
 import { checkIfBusPasses } from "../../redux/iett/actions"
 import styles from "./styles";
 import BaseContainer from "../BaseContainer";
-import { SCREEN_MAP } from "../../Routers/screens";
+import { SCREENS_MAP } from "../screens";
 
 const ROBOTO_REGULAR = "RobotoCondensed-Regular";
 const ROBOTO_BOLD = "RobotoCondensed-Bold";
@@ -95,7 +94,7 @@ class Home extends BaseContainer {
   }
 
   _setupSavedStations = () => {
-    this.navigate(SCREEN_MAP.SetupStations);
+    this.navigate(SCREENS_MAP.SetupStations);
   }
 }
 
