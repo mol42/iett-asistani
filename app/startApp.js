@@ -12,6 +12,12 @@ export const startApp = () => {
         screen: {
             screen: SCREENS_MAP.Home.name
         },
+        drawer: {
+            left: {
+              screen: SCREENS_MAP.Drawer.name,
+            },
+            animationType: 'slide'
+          },        
         animationType: 'fade'
     });
 }

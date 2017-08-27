@@ -30,8 +30,8 @@ class Home extends BaseContainer {
     busCode : null
   }
 
-  static navigationOptions = {
-    header: null
+  static navigatorStyle = {
+    navBarHidden : true
   };
 
   static propTypes = {

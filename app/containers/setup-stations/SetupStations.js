@@ -16,6 +16,7 @@ import {
   Col
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
+import MapView from 'react-native-maps';
 
 import { checkIfBusPasses } from "../../redux/iett/actions"
 import styles from "./styles";
@@ -41,7 +42,24 @@ class SetupStations extends Component {
     return (
       <Container style={styles.container}>
         <Content>
-          <Text>Setup Stations</Text>
+          <MapView
+            style={{flex: 1, height: 500, borderWidth : 1, borderColor : "red"}}
+            mapType={"satellite"}
+            initialRegion={{
+              latitude: 40.9909,
+              longitude: 29.07816,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}>
+            <MapView.Marker
+              coordinate={{
+                latitude: 40.9909,
+                longitude: 29.07816
+              }}
+              title={"Test"}
+              description={"Test"}
+            />
+          </MapView>
         </Content>
       </Container>
     );

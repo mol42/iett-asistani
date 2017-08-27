@@ -55,7 +55,7 @@ export default class Drawer extends React.Component {
               return (
                 <ListItem
                   button
-                  onPress={() => this.props.navigation.navigate(data)}
+                  onPress={void(0)}
                 >
                   <Text>{data}</Text>
                 </ListItem>
