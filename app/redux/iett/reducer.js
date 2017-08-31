@@ -21,7 +21,6 @@ export const iettReducer = (state = initialState, action) => {
             }
             break;
         case SET_ACTIVE_REGION:
-        console.log("SET_ACTIVE_REGION action.payload -> ", action.payload);
             state = {
                 ...state,
                 region : {
