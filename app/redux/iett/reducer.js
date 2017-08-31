@@ -1,10 +1,15 @@
 import {
-    CHECK_IF_BUS_PASSES_SUCCESS
+    CHECK_IF_BUS_PASSES_SUCCESS,
+    SET_ACTIVE_REGION
 } from "./actions";
 
 const initialState = {
     busPasses : false,
-    selectedStation : null
+    selectedStation : null,
+    region : {
+        stationList : [],
+        activeRegion : null 
+    }
 };
 
 export const iettReducer = (state = initialState, action) => {
@@ -13,6 +18,15 @@ export const iettReducer = (state = initialState, action) => {
             state = {
                 ...state,
                 busPasses : action.payload
+            }
+            break;
+        case SET_ACTIVE_REGION:
+        console.log("SET_ACTIVE_REGION action.payload -> ", action.payload);
+            state = {
+                ...state,
+                region : {
+                    stationList : action.payload
+                }
             }
             break;
         default:
